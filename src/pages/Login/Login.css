@@ -1,0 +1,96 @@
+/* Login.css */
+.auth-wrapper {
+  min-height: 100vh;
+  background-color: #e6c8c8; /* Image jaisa background color */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.auth-card {
+  background: var(--white);
+  width: 100%;
+  max-width: 350px; /* Mobile size card */
+  height: 600px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.auth-header {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 40px;
+}
+
+.auth-logo {
+  height: 40px;
+  margin-bottom: 20px;
+}
+
+.auth-header h2 {
+  font-size: 18px;
+  color: var(--text-dark);
+  font-weight: 600;
+}
+
+.auth-form {
+  flex: 1; /* Beech ka khali space cover karega */
+}
+
+.auth-form label {
+  display: block;
+  font-size: 13px;
+  color: var(--text-dark);
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.input-group {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--primary-blue);
+  border-radius: 20px;
+  padding: 10px 15px;
+}
+
+.country-code {
+  font-size: 20px;
+  padding-right: 10px;
+  border-right: 1px solid #eee;
+  margin-right: 10px;
+}
+
+.input-group input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  width: 100%;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: 1px;
+}
+
+.auth-footer {
+  margin-top: auto; /* Button ko hamesha niche rakhne ke liye */
+}
+
+.auth-btn {
+  width: 100%;
+  background: transparent;
+  color: var(--primary-blue);
+  border: 1px solid var(--primary-blue);
+  padding: 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.auth-btn:hover {
+  background: var(--primary-blue);
+  color: var(--white);
+}

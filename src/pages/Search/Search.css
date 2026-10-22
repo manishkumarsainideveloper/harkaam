@@ -1,0 +1,308 @@
+/* Search.css */
+.search-page {
+  background-color: #f8f9fa;
+  min-height: 100vh;
+  padding-bottom: 50px;
+}
+
+/* --- Top Search Bar --- */
+.top-search-bar {
+  background: var(--white);
+  padding: 15px 0;
+  border-bottom: 1px solid #e5e7eb;
+  margin-bottom: 20px;
+}
+
+.top-search-container {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+}
+
+.search-location {
+  border: 1px solid #e5e7eb;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #fff;
+}
+
+.search-input-wrapper {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 10px 15px;
+  background: #fff;
+}
+
+.search-input-wrapper input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.top-search-btn {
+  background: var(--primary-orange);
+  color: #fff;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* --- Main Layout --- */
+.search-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr 350px;
+  gap: 20px;
+  align-items: start;
+}
+
+/* --- Left Filters --- */
+.filters-sidebar {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+}
+
+.filter-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.filter-header h3 { font-size: 16px; color: var(--text-dark); }
+.clear-btn { background: none; border: none; color: var(--primary-blue); font-size: 12px; cursor: pointer; }
+
+.filter-group { margin-bottom: 25px; }
+.filter-group h4 { font-size: 14px; margin-bottom: 12px; color: var(--text-dark); }
+.filter-group label {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  margin-bottom: 10px;
+  color: var(--text-light);
+  cursor: pointer;
+}
+.filter-group input[type="checkbox"] { margin-right: 8px; }
+
+.price-slider { width: 100%; margin-bottom: 10px; }
+.price-labels { display: flex; justify-content: space-between; font-size: 12px; color: var(--text-light); }
+
+/* --- Center Providers List --- */
+.providers-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.providers-header h2 { font-size: 18px; color: var(--text-dark); }
+.sort-dropdown select { padding: 5px 10px; border-radius: 6px; border: 1px solid #ccc; font-size: 13px; }
+
+.providers-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.provider-card {
+  background: var(--white);
+  padding: 20px;
+  border-radius: 12px;
+  display: flex;
+  gap: 20px;
+  border: 1px solid #e5e7eb;
+  transition: 0.2s;
+}
+
+.provider-card:hover { box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
+
+.provider-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.provider-info { flex: 1; }
+.provider-info h3 { font-size: 16px; color: var(--primary-blue); margin-bottom: 5px; }
+.provider-rating { font-size: 13px; margin-bottom: 8px; color: var(--text-light); }
+.provider-rating .star { color: #fbbf24; font-weight: 600; }
+.provider-tags { font-size: 12px; color: #10b981; margin-bottom: 5px; }
+.provider-tags span { color: var(--text-light); }
+.provider-distance { font-size: 12px; color: var(--text-light); }
+
+.provider-action {
+  text-align: right;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.provider-action .price { font-size: 18px; font-weight: 700; color: var(--text-dark); }
+.provider-action .price span { font-size: 12px; font-weight: 400; color: var(--text-light); }
+
+.book-now-btn {
+  background: var(--primary-orange);
+  color: var(--white);
+  border: none;
+  padding: 8px 20px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* --- Right Map Area --- */
+.map-area {
+  background: #e5e7eb;
+  border-radius: 12px;
+  height: 600px;
+  position: sticky;
+  top: 20px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+}
+
+.map-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8;
+}
+
+.map-pin {
+  position: absolute;
+  font-size: 30px;
+  filter: drop-shadow(0 4px 4px rgba(0,0,0,0.3));
+}
+
+.map-floating-card {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.map-floating-card img {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.map-floating-card h4 { font-size: 14px; color: var(--primary-blue); margin-bottom: 2px; }
+.map-floating-card p { font-size: 12px; color: var(--text-light); margin: 0; }
+.map-floating-card .star { color: #fbbf24; font-weight: bold; }
+.map-floating-card .dist { margin-top: 2px; }
+
+.map-controls {
+  position: absolute;
+  bottom: 100px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  overflow: hidden;
+}
+
+.map-controls button {
+  border: none;
+  background: #fff;
+  padding: 10px 15px;
+  font-size: 18px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+
+/* Home Page Responsive */
+@media (max-width: 768px) {
+  /* Hero Section */
+  .hero__container {
+    flex-direction: column;
+    padding-top: 40px;
+    text-align: center;
+  }
+  
+  .hero-bg-img {
+    width: 100%;
+    opacity: 0.2; /* Image ko background me halka kar diya taaki text dikhe */
+  }
+  
+  .hero__title {
+    font-size: 36px;
+  }
+  
+  .hero__search-box {
+    flex-direction: column;
+    border-radius: 12px;
+    padding: 15px;
+    gap: 10px;
+  }
+  
+  .search-divider {
+    display: none; /* Divider line hata di */
+  }
+  
+  .search-input-group {
+    width: 100%;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    padding: 10px;
+  }
+  
+  .search-btn {
+    width: 100%;
+    border-radius: 8px;
+    padding: 12px;
+  }
+  
+  /* Features Bar */
+  .hero__features-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  /* Steps (How it works) */
+  .steps-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .step-arrow {
+    transform: rotate(90deg); /* Arrow ko niche ki taraf kar diya */
+    margin: 10px 0;
+  }
+  
+  /* Verified Banner */
+  .verified-banner {
+    flex-direction: column;
+  }
+  
+  /* Stats */
+  .stats-container {
+    grid-template-columns: 1fr 1fr; /* 4 ki jagah 2 column */
+  }
+}
