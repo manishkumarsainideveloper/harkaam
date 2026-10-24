@@ -10,6 +10,8 @@
   justify-content: space-between;
   align-items: center;
   margin-bottom: 25px;
+  gap: 15px;
+  flex-wrap: wrap; /* NAYA: mobile par wrap ho jaye */
 }
 
 .tracking-header h2 {
@@ -24,6 +26,8 @@
   border-radius: 20px;
   font-size: 14px;
   font-weight: 600;
+  white-space: nowrap; /* NAYA: badge text wrap na ho */
+  flex-shrink: 0;
 }
 
 .tracking-layout {
@@ -60,6 +64,7 @@
   height: 60px;
   border-radius: 50%;
   object-fit: cover;
+  flex-shrink: 0; /* NAYA: avatar squeeze na ho */
 }
 
 .provider-top h3 { font-size: 18px; color: var(--text-dark); margin-bottom: 3px; }
@@ -123,6 +128,7 @@
   margin-top: 4px;
   position: relative;
   z-index: 2;
+  flex-shrink: 0; /* NAYA */
 }
 
 .timeline-item.completed .timeline-dot { background: #10b981; }
@@ -179,4 +185,172 @@
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN (KUCH BHI HIDE NAHI HOGA)
+   ========================================= */
+
+/* --- Tablet View (Screens <= 1024px) --- */
+@media (max-width: 1024px) {
+  /* Sidebar thoda chhota karo */
+  .tracking-layout {
+    grid-template-columns: 300px 1fr;
+  }
+  
+  .tracking-map-area {
+    height: 500px;
+  }
+  
+  .provider-info-card, .timeline-card {
+    padding: 20px;
+  }
+}
+
+/* --- Mobile View (Screens <= 768px) --- */
+@media (max-width: 768px) {
+  
+  /* 1. Page Padding */
+  .tracking-page {
+    padding: 20px 0;
+  }
+
+  /* 2. HEADER */
+  .tracking-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .tracking-header h2 {
+    font-size: 18px;
+  }
+
+  .status-badge {
+    font-size: 12px;
+    padding: 5px 12px;
+  }
+
+  /* 3. LAYOUT - Single column (Sidebar upar, Map niche) */
+  .tracking-layout {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  /* 4. SIDEBAR - sab kuch visible rahe */
+  .tracking-sidebar {
+    gap: 15px;
+  }
+
+  .provider-info-card, .timeline-card {
+    padding: 18px;
+  }
+
+  /* 5. PROVIDER INFO */
+  .tracking-avatar {
+    width: 50px;
+    height: 50px;
+  }
+
+  .provider-top h3 {
+    font-size: 16px;
+  }
+
+  .rating {
+    font-size: 12px;
+  }
+
+  .eta-box h2 {
+    font-size: 24px;
+  }
+
+  /* 6. TIMELINE */
+  .timeline-card h3 {
+    font-size: 15px;
+    margin-bottom: 15px;
+  }
+
+  .timeline {
+    gap: 20px;
+  }
+
+  .timeline-content h4 {
+    font-size: 13px;
+  }
+
+  .timeline-content p {
+    font-size: 11px;
+  }
+
+  /* Timeline line adjust */
+  .timeline-item::before {
+    bottom: -20px;
+  }
+
+  /* 7. MAP AREA - Niche aayega, height kam */
+  .tracking-map-area {
+    height: 350px;
+    width: 100%;
+  }
+
+  /* Map markers ka size chhota */
+  .map-marker {
+    font-size: 24px;
+    padding: 6px;
+  }
+
+  /* 8. BACK BUTTON - Bottom full width */
+  .back-to-home-btn {
+    bottom: 15px;
+    right: 15px;
+    left: 15px;
+    width: calc(100% - 30px);
+    padding: 12px;
+    font-size: 14px;
+  }
+}
+
+/* --- Very Small Devices (Screens <= 480px) --- */
+@media (max-width: 480px) {
+  .tracking-header h2 {
+    font-size: 16px;
+  }
+
+  .tracking-avatar {
+    width: 45px;
+    height: 45px;
+  }
+
+  .provider-top {
+    gap: 12px;
+  }
+
+  .provider-top h3 {
+    font-size: 15px;
+  }
+
+  .eta-box h2 {
+    font-size: 22px;
+  }
+
+  .contact-btn {
+    padding: 10px;
+    font-size: 13px;
+  }
+
+  .timeline-content h4 {
+    font-size: 12.5px;
+  }
+
+  /* Map aur chhota */
+  .tracking-map-area {
+    height: 300px;
+  }
+
+  .map-marker {
+    font-size: 20px;
+    padding: 5px;
+  }
 }

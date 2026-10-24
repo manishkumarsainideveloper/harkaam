@@ -196,3 +196,163 @@
   color: var(--text-light);
   padding: 50px 0;
 }
+/* =========================================
+   RESPONSIVE DESIGN FOR PROFILE PAGE
+   ========================================= */
+
+/* --- Tablet View (Screens <= 992px) --- */
+@media (max-width: 992px) {
+  .profile-layout {
+    /* Sidebar ki width thodi kam karein */
+    grid-template-columns: 240px 1fr;
+    gap: 20px;
+  }
+
+  .profile-content {
+    padding: 25px 20px;
+  }
+
+  .info-grid {
+    gap: 20px;
+  }
+}
+
+/* --- Mobile View (Screens <= 768px) --- */
+@media (max-width: 768px) {
+  
+  /* 1. Page Padding */
+  .profile-page {
+    padding: 20px 0 40px;
+  }
+
+  /* 2. Layout ko Single Column banayein (Sidebar upar, Content niche) */
+  .profile-layout {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  /* 3. Sidebar Menu (Mobile par Horizontal Scroll ya List) */
+  .profile-sidebar {
+    width: 100%;
+  }
+
+  .user-summary {
+    padding: 20px;
+  }
+
+  .user-avatar-large {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+    margin-bottom: 10px;
+  }
+
+  /* Menu items ko mobile par horizontally scrollable banayein */
+  .profile-menu {
+    display: flex;
+    overflow-x: auto; /* Side scroll allow karega */
+    padding: 0;
+    white-space: nowrap;
+    border-bottom: 1px solid #e5e7eb;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE */
+  }
+
+  .profile-menu::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+
+  .profile-menu li {
+    padding: 15px 20px;
+    border-left: none;
+    border-bottom: 3px solid transparent; /* Active state ke liye */
+    flex-shrink: 0;
+  }
+
+  .profile-menu li.active {
+    border-left-color: transparent;
+    border-bottom-color: var(--primary-blue);
+  }
+
+  /* 4. Right Content */
+  .profile-content {
+    padding: 20px;
+    min-height: auto;
+  }
+
+  .content-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 20px;
+  }
+
+  .content-header h2 {
+    font-size: 18px;
+  }
+
+  /* 5. Info Grid (Mobile par 1 column) */
+  .info-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .info-group p {
+    font-size: 15px;
+  }
+
+  /* 6. Address Card */
+  .address-card {
+    padding: 15px;
+  }
+
+  .address-header {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .address-header h4 {
+    font-size: 15px;
+  }
+
+  .address-actions {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .empty-tab {
+    padding: 30px 0;
+  }
+}
+
+/* --- Very Small Devices (Screens <= 480px) --- */
+@media (max-width: 480px) {
+  
+  .user-summary h3 {
+    font-size: 16px;
+  }
+
+  .profile-content {
+    padding: 15px;
+  }
+
+  /* Edit / Add Button full width */
+  .edit-btn, .add-btn {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  /* Address Actions buttons full width */
+  .address-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .text-btn {
+    text-align: left;
+    padding: 5px 0;
+  }
+}

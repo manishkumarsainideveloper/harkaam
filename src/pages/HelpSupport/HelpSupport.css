@@ -24,6 +24,7 @@
   margin-bottom: 30px;
 }
 
+/* --- SEARCH BAR --- */
 .help-search {
   display: flex;
   align-items: center;
@@ -33,15 +34,18 @@
   padding: 6px;
   border-radius: 50px;
   box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  gap: 5px; /* NAYA: elements ke beech gap */
 }
 
 .help-search .search-icon {
   padding: 0 15px;
   font-size: 18px;
+  flex-shrink: 0; /* NAYA: icon squeeze na ho */
 }
 
 .help-search input {
   flex: 1;
+  min-width: 0; /* NAYA: input squeeze na ho */
   border: none;
   outline: none;
   padding: 10px 0;
@@ -57,11 +61,13 @@
   border-radius: 40px;
   font-weight: 600;
   cursor: pointer;
+  white-space: nowrap; /* NAYA: button text wrap na ho */
+  flex-shrink: 0; /* NAYA: button squeeze na ho */
 }
 
 /* --- Quick Actions --- */
 .help-content {
-  margin-top: -40px; /* Hero ke upar overlap karne ke liye */
+  margin-top: -40px; 
 }
 
 .quick-actions {
@@ -145,18 +151,23 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 15px; /* NAYA: question aur icon ke beech gap */
 }
 
 .faq-question h4 {
   font-size: 16px;
   color: var(--text-dark);
   margin: 0;
+  flex: 1; /* NAYA: question ko jagah mile */
 }
 
 .faq-toggle {
   font-size: 20px;
   color: var(--primary-blue);
   font-weight: bold;
+  flex-shrink: 0; /* NAYA: +/- icon squeeze na ho */
+  width: 24px;
+  text-align: center;
 }
 
 .faq-answer {
@@ -171,25 +182,175 @@
   line-height: 1.6;
 }
 
-@media (max-width: 768px) {
-  .quick-actions {
-    grid-template-columns: 1fr;
+/* =========================================
+   RESPONSIVE DESIGN (KUCH BHI HIDE NAHI HOGA)
+   ========================================= */
+
+/* --- Tablet View (Screens <= 992px) --- */
+@media (max-width: 992px) {
+  .help-hero {
+    padding: 50px 0 70px;
   }
+
+  .help-hero h1 {
+    font-size: 32px;
+  }
+
+  /* Container ke andar padding taaki content kinare se na chipke */
+  .help-content {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .quick-actions {
+    gap: 15px;
+  }
+
+  .action-card {
+    padding: 25px 15px;
+  }
+
+  .action-card h3 {
+    font-size: 16px;
+  }
+}
+
+/* --- Mobile View (Screens <= 768px) --- */
+@media (max-width: 768px) {
   
+  /* 1. HERO SECTION */
+  .help-hero {
+    padding: 40px 15px 70px; /* NAYA: side padding */
+  }
+
   .help-hero h1 {
     font-size: 28px;
   }
-  
+
+  .help-hero p {
+    font-size: 14px;
+    margin-bottom: 25px;
+  }
+
+  /* 2. SEARCH BAR - Stack karein, kuch hide nahi */
   .help-search {
     flex-direction: column;
     border-radius: 12px;
     background: transparent;
     box-shadow: none;
+    gap: 10px;
+    padding: 0;
   }
-  
-  .help-search input, .help-search button {
+
+  /* Icon ko bahar rakhein taaki input full width le */
+  .help-search .search-icon {
+    display: none; /* Sirf mobile par icon hata rahe hain, kyunki input ke andar laga denge */
+  }
+
+  /* Input ko card style dein */
+  .help-search input {
     width: 100%;
-    border-radius: 8px;
+    background: white;
+    padding: 14px 18px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    font-size: 14px;
+    box-sizing: border-box; /* NAYA: padding ke baad width overflow na ho */
+  }
+
+  .help-search button {
+    width: 100%;
+    padding: 14px;
+    border-radius: 10px;
+    font-size: 15px;
+  }
+
+  /* 3. QUICK ACTIONS - 3 se 1 column */
+  .quick-actions {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-bottom: 35px;
+  }
+
+  /* Action card ko horizontal karein (icon left, text right) */
+  .action-card {
+    display: flex;
+    align-items: center;
+    text-align: left;
+    padding: 18px 20px;
+    gap: 15px;
+  }
+
+  .action-icon {
+    margin-bottom: 0;
+    font-size: 28px;
+    flex-shrink: 0;
+  }
+
+  .action-card h3 {
+    font-size: 16px;
+    margin-bottom: 2px;
+  }
+
+  .action-card p {
+    font-size: 12px;
+  }
+
+  /* 4. FAQ SECTION */
+  .faq-section h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+  }
+
+  .faq-item {
+    padding: 15px;
+  }
+
+  .faq-question h4 {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .faq-toggle {
+    font-size: 18px;
+  }
+
+  .faq-answer p {
+    font-size: 13px;
+  }
+}
+
+/* --- Very Small Devices (Screens <= 480px) --- */
+@media (max-width: 480px) {
+  .help-hero {
+    padding: 30px 12px 60px;
+  }
+
+  .help-hero h1 {
+    font-size: 24px;
+  }
+
+  .help-hero p {
+    font-size: 13px;
+  }
+
+  /* Action card: icon upar, text niche (chhoti screen par horizontal bhi ajeeb lagega) */
+  .action-card {
+    flex-direction: column;
+    text-align: center;
+    padding: 20px 15px;
+  }
+
+  .action-icon {
     margin-bottom: 10px;
+    font-size: 30px;
+  }
+
+  .faq-question h4 {
+    font-size: 14px;
+  }
+
+  .faq-answer p {
+    font-size: 12.5px;
   }
 }

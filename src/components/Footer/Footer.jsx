@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './Footer.css';
+import Logo from '../../assets/Kaamdaar_Primary_Logo_400x137.png';
 
 const Footer = () => {
   return (
@@ -10,11 +11,13 @@ const Footer = () => {
         {/* Column 1: Logo & Info */}
         <div className="footer__col">
           <div className="footer__logo">
-            <span className="navbar__logo-icon">🏠</span>
+            <span>
+                <img src={Logo} alt="Kaamdaar-Logo" style={{ height: '60px', objectFit: 'contain' }} />
+            </span>
             <h2>Kaamdaar</h2>
           </div>
-          <p className="footer__tagline">Har Kaam Turant</p>
-          <p className="footer__copyright">© 2024 Kaamdaar. All rights reserved.</p>
+
+          <p className="footer__copyright">© 2026 Kaamdaar. All rights reserved.</p>
         </div>
 
         {/* Column 2: Quick Links */}

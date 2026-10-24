@@ -1,6 +1,8 @@
 import React from 'react';
 import './Home.css';
 import { useNavigate } from 'react-router-dom';
+import backgroundHeroImage from "../../assets/photofirst.jpg"
+
 const Home = () => {
     const navigate = useNavigate();
   return (
@@ -10,9 +12,9 @@ const Home = () => {
       <section className="hero">
         
         {/* Background Image */}
-        <img 
-          src="https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-          alt="Professional Worker" 
+        <img
+        src="https://media.istockphoto.com/id/2216081659/photo/young-businessman-using-phone-and-laughing-at-home.jpg?s=612x612&w=0&k=20&c=WXobQef39_gu-ToCKZDN6qPbZUhXPRPOT1r5uICu6Wc="
+        alt='Hero-background image'
           className="hero-bg-img"
         />
 
@@ -111,6 +113,10 @@ const Home = () => {
               { name: 'Carpenter', icon: '🪚' },
               { name: 'Appliance Repair', icon: '📺' },
               { name: 'Pest Control', icon: '🐜' },
+              { name: 'salon' , icon:  '💅'},
+              { name: 'RO' , icon: '💧'},
+              { name: 'Geyser' , icon: '♨️'},
+              { name: 'Gardener' , icon: '🌿'},
             ].map((service, index) => (
               <div key={index} className="service-card">
                 <div className="service-card__icon">{service.icon}</div>
@@ -125,7 +131,7 @@ const Home = () => {
       <section className="how-it-works">
         <div className="container">
           <div className="how-it-works__header">
-            <h2>How Kaamdaar Works?</h2>
+            <h2>How Kaam<span className="text-orange">daar</span> Works?</h2>
             <p>Get your service in 4 simple steps</p>
           </div>
 

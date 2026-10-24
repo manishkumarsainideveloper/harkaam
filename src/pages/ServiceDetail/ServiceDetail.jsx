@@ -9,7 +9,7 @@ const ServiceDetail = () => {
   const handleBookNow = () => {
     const isLoggedIn = localStorage.getItem('isLoggedIn');
     if (!isLoggedIn) {
-      alert("Please login to book a service!"); 
+      //alert("Please login to book a service!"); 
       navigate('/login');
     } else {
       navigate('/booking');
